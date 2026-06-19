@@ -50,3 +50,10 @@ body {
 .mt-safe {
   margin-top: env(safe-area-inset-top);
 }
+
+/* Navbar inferior: o padding-base mantém os botões acima da home indicator
+   e o env() estende o fundo escuro da própria navbar até a borda física da
+   tela — assim NÃO sobra nenhuma faixa preta vazia abaixo da barra. */
+.nav-safe {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+}

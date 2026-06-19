@@ -15,3 +15,6 @@
 {"timestamp":"00:17:20.963","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
 {"timestamp":"00:21:14.862","source":"Server","level":"LOG","message":"✓ Compiled in 61ms"}
 {"timestamp":"00:22:58.295","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
+{"timestamp":"00:27:15.368","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
+{"timestamp":"00:31:47.918","source":"Server","level":"LOG","message":"✓ Compiled in 38ms"}
+{"timestamp":"00:31:57.861","source":"Server","level":"LOG","message":"✓ Compiled in 174ms"}

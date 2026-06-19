@@ -1462,7 +1462,7 @@ const ITEMS = [
 ];
 function BottomNav({ active, onNavigate }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "flex items-stretch border-t border-white/[0.08] bg-uberBg px-2 pb-3 pt-3",
+        className: "nav-safe flex items-stretch border-t border-white/[0.08] bg-uberBg px-2 pt-3",
         children: ITEMS.map((it)=>{
             const isActive = it.key === active;
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {

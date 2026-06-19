@@ -571,10 +571,6 @@ img, video {
   height: 2.25rem;
 }
 
-.h-\[100dvh\] {
-  height: 100dvh;
-}
-
 .h-\[100px\] {
   height: 100px;
 }
@@ -729,10 +725,6 @@ img, video {
 
 .max-w-\[300px\] {
   max-width: 300px;
-}
-
-.max-w-\[412px\] {
-  max-width: 412px;
 }
 
 .flex-1 {
@@ -1314,10 +1306,6 @@ img, video {
   padding-top: 1.25rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1641,6 +1629,10 @@ html, body {
 
 .mt-safe {
   margin-top: env(safe-area-inset-top);
+}
+
+.nav-safe {
+  padding-bottom: calc(.75rem + env(safe-area-inset-bottom));
 }
 
 .placeholder\:text-neutral-600::placeholder {
