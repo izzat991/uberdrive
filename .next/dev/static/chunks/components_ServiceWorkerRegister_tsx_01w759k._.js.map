@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ADMIN/Desktop/new/components/ServiceWorkerRegister.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect } from \"react\";\n\n/**\n * Registra o service worker para habilitar PWA / instalação e\n * funcionamento dentro de WebView (Android/iOS).\n */\nexport default function ServiceWorkerRegister() {\n  useEffect(() => {\n    if (typeof window === \"undefined\") return;\n    if (!(\"serviceWorker\" in navigator)) return;\n    if (process.env.NODE_ENV !== \"production\") return;\n\n    const onLoad = () => {\n      navigator.serviceWorker.register(\"/sw.js\").catch(() => {\n        /* silencioso: WebViews podem bloquear SW */\n      });\n    };\n    window.addEventListener(\"load\", onLoad);\n    return () => window.removeEventListener(\"load\", onLoad);\n  }, []);\n\n  return null;\n}\n"],"names":["ServiceWorkerRegister","navigator","onLoad"],"mappings":";;;;AAYQ;AAVR;;AAFA;;AAQe,SAASA;;IACtB,IAAA,0KAAS;2CAAC;YACR;;YACA,IAAI,CAAC,CAAC,mBAAmBC,SAAS,GAAG;YACrC,wCAA2C;;;YAE3C,MAAMC;QAOR;0CAAG,EAAE;IAEL,OAAO;AACT;GAhBwBF;KAAAA"}}]
+}

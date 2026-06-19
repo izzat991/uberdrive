@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(node scripts/gen-icons.mjs)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(pkill -f \"next dev\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"next\")",
+      "Bash(pkill -f \"node.*dev\")",
+      "PowerShell(try { Stop-Process -Id 31228 -Force -ErrorAction Stop; \"killed\" } catch { $_.Exception.Message })",
+      "Bash(ls -la ~/Downloads/Gemini_Generated_Image_2dokdz2dokdz2dok* 2>/dev/null)",
+      "Bash(cp ~/Downloads/Gemini_Generated_Image_2dokdz2dokdz2dok.png \"C:/Users/ADMIN/Desktop/new/public/map-bg.png\" && ls -la \"C:/Users/ADMIN/Desktop/new/public/map-bg.png\")",
+      "Bash(node -e \"const b=require\\('fs'\\).readFileSync\\('C:/Users/ADMIN/Desktop/new/public/icons/uber.webp'\\); console.log\\('size',b.length\\); console.log\\('riff',b.slice\\(0,4\\).toString\\(\\)\\); console.log\\('format',b.slice\\(8,16\\).toString\\(\\)\\);\")"
+    ]
+  }
+}
