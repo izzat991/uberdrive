@@ -268,6 +268,10 @@ img, video {
   pointer-events: auto;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1679,12 +1683,28 @@ html, body {
 }
 
 @media (min-width: 640px) {
+  .sm\:relative {
+    position: relative;
+  }
+
+  .sm\:inset-auto {
+    inset: auto;
+  }
+
   .sm\:h-\[844px\] {
     height: 844px;
   }
 
   .sm\:max-h-\[92vh\] {
     max-height: 92vh;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:max-w-\[412px\] {
+    max-width: 412px;
   }
 
   .sm\:rounded-\[2\.2rem\] {
