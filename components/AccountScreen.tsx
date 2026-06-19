@@ -67,7 +67,7 @@ export default function AccountScreen({
     <div className="absolute inset-0 z-[45] flex flex-col bg-[#121212]">
       <div className="hide-scrollbar flex-1 overflow-y-auto px-5">
         {/* Cabeçalho */}
-        <div className="pt-5">
+        <div className="pt-safe-lg">
           <button type="button" onClick={onBack} className="text-white" aria-label="Voltar">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 6l-6 6 6 6" />

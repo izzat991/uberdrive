@@ -12,7 +12,7 @@ export default function HomeScreen({
   return (
     <div className="absolute inset-0 z-40 flex flex-col bg-uberBg">
       {/* Conteúdo rolável */}
-      <div className="hide-scrollbar flex-1 overflow-y-auto px-5 pb-2 pt-4">
+      <div className="pt-safe-lg hide-scrollbar flex-1 overflow-y-auto px-5 pb-2">
         {/* Botões circulares no topo direito: [ Escudo ] [ Compartilhar ] */}
         <div className="mb-4 flex items-center justify-end gap-3">
           <button

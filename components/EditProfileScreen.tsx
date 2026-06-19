@@ -54,7 +54,7 @@ export default function EditProfileScreen({
   return (
     <div className="absolute inset-0 z-[55] flex flex-col bg-[#121212]">
       {/* Cabeçalho */}
-      <div className="flex items-center gap-3 px-5 pt-5">
+      <div className="pt-safe-lg flex items-center gap-3 px-5">
         <button type="button" onClick={onClose} className="text-white" aria-label="Fechar">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M6 6l12 12M18 6L6 18" />

@@ -34,7 +34,7 @@ export default function EarningsScreen({
     <div className="absolute inset-0 z-40 flex flex-col bg-[#121212]">
       <div className="hide-scrollbar flex-1 overflow-y-auto px-4 pb-4">
         {/* Cabeçalho */}
-        <div className="flex items-start justify-between pt-5">
+        <div className="pt-safe-lg flex items-start justify-between">
           <h1 className="text-[28px] font-bold text-white">Ganhos</h1>
           <button className="flex items-center gap-1.5 rounded-full bg-[#1E1E1E] px-3 py-1.5 text-[14px] text-white">
             <span className="flex h-4 w-4 items-center justify-center rounded-full border border-white/60 text-[10px]">

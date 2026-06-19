@@ -24,7 +24,7 @@ export default function MenuScreen({
     <div className="absolute inset-0 z-40 flex flex-col bg-[#121212]">
       <div className="hide-scrollbar flex-1 overflow-y-auto px-5">
         {/* Perfil */}
-        <div className="pt-6">
+        <div className="pt-safe-lg">
           <div className="flex items-center gap-3">
             {/* Foto com diamante sobreposto no canto inferior esquerdo */}
             <div className="relative">

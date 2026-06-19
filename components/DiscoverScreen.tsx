@@ -131,7 +131,7 @@ export default function DiscoverScreen({
     <div className="absolute inset-0 z-40 flex flex-col bg-[#121212]">
       <div className="hide-scrollbar flex-1 overflow-y-auto">
         {/* Título */}
-        <h1 className="px-5 pb-3 pt-5 text-[26px] font-bold text-white">
+        <h1 className="pt-safe-lg px-5 pb-3 text-[26px] font-bold text-white">
           Descubra
         </h1>
 
