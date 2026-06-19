@@ -18,7 +18,7 @@ export default function VehiclesScreen({
   return (
     <div className="absolute inset-0 z-[45] flex flex-col bg-[#121212]">
       {/* Cabeçalho */}
-      <div className="flex items-center px-4 pt-5">
+      <div className="pt-safe-lg flex items-center px-4">
         <button type="button" onClick={onBack} className="text-white" aria-label="Voltar">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M15 6l-6 6 6 6" />

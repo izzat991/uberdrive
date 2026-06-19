@@ -10,13 +10,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Driver",
-  description: "Driver app — réplica visual estilo Uber Driver",
+  title: "Uber Drive",
+  description: "Uber Drive — réplica visual estilo Uber Driver",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/icon-192.png",
+    apple: "/icons/apple-touch-icon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Driver",
+    title: "Uber Drive",
   },
 };
 
