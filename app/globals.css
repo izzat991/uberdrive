@@ -33,3 +33,20 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ---- Safe area (notch / barra de status / home indicator do iPhone) ----
+   Combinamos o espaçamento de design com o inset do dispositivo via max(),
+   garantindo que o conteúdo nunca fique sob a barra de notificação no topo
+   e sem espaçamento exagerado embaixo em telas sem home indicator. */
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+.pt-safe-lg {
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+}
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+.mt-safe {
+  margin-top: env(safe-area-inset-top);
+}

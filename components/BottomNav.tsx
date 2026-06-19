@@ -53,7 +53,7 @@ export default function BottomNav({
   onNavigate?: (key: NavKey) => void;
 }) {
   return (
-    <nav className="flex items-stretch border-t border-white/[0.08] bg-uberBg px-2 pb-3 pt-3">
+    <nav className="pb-safe flex items-stretch border-t border-white/[0.08] bg-uberBg px-2 pt-3">
       {ITEMS.map((it) => {
         const isActive = it.key === active;
         return (

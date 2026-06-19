@@ -13,7 +13,7 @@ export default function TopStatus({
   onHome?: () => void;
 }) {
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-center justify-between px-3 pt-3">
+    <div className="pt-safe pointer-events-none absolute inset-x-0 top-0 z-20 flex items-center justify-between px-3">
       {/* Home circular */}
       <button
         type="button"
