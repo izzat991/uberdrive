@@ -1,20 +1,7 @@
-{"timestamp":"00:00:00.592","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
-{"timestamp":"00:00:00.593","source":"Server","level":"LOG","message":"  · serverActions"}
-{"timestamp":"00:00:00.593","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
-{"timestamp":"00:00:00.593","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:11:30.322","source":"Server","level":"LOG","message":"✓ Compiled in 49ms"}
-{"timestamp":"00:11:50.790","source":"Server","level":"LOG","message":"✓ Compiled in 160ms"}
-{"timestamp":"00:12:03.244","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
-{"timestamp":"00:12:03.383","source":"Server","level":"LOG","message":"✓ Compiled in 29ms"}
-{"timestamp":"00:12:15.318","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
-{"timestamp":"00:13:58.114","source":"Server","level":"LOG","message":"✓ Compiled in 44ms"}
-{"timestamp":"00:14:48.130","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}
-{"timestamp":"00:14:48.199","source":"Server","level":"LOG","message":"✓ Compiled in 67ms"}
-{"timestamp":"00:14:48.843","source":"Server","level":"LOG","message":"✓ Compiled in 39ms"}
-{"timestamp":"00:14:48.936","source":"Server","level":"LOG","message":"✓ Compiled in 39ms"}
-{"timestamp":"00:17:20.963","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
-{"timestamp":"00:21:14.862","source":"Server","level":"LOG","message":"✓ Compiled in 61ms"}
-{"timestamp":"00:22:58.295","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
-{"timestamp":"00:27:15.368","source":"Server","level":"LOG","message":"  Reload env: .env.development.local"}
-{"timestamp":"00:31:47.918","source":"Server","level":"LOG","message":"✓ Compiled in 38ms"}
-{"timestamp":"00:31:57.861","source":"Server","level":"LOG","message":"✓ Compiled in 174ms"}
+{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
+{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  · serverActions"}
+{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
+{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
+{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:01:55.639","source":"Server","level":"LOG","message":"✓ Compiled in 39ms"}
+{"timestamp":"00:02:10.255","source":"Server","level":"LOG","message":"✓ Compiled in 255ms"}
