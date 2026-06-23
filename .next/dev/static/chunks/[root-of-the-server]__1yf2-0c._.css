@@ -1902,10 +1902,6 @@ html, body {
   margin-top: env(safe-area-inset-top);
 }
 
-.nav-safe {
-  padding-bottom: calc(.75rem + env(safe-area-inset-bottom));
-}
-
 .placeholder\:text-neutral-600::placeholder {
   --tw-text-opacity: 1;
   color: rgb(82 82 82 / var(--tw-text-opacity, 1));

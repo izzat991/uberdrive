@@ -51,9 +51,6 @@ body {
   margin-top: env(safe-area-inset-top);
 }
 
-/* Navbar inferior: o padding-base mantém os botões acima da home indicator
-   e o env() estende o fundo escuro da própria navbar até a borda física da
-   tela — assim NÃO sobra nenhuma faixa preta vazia abaixo da barra. */
-.nav-safe {
-  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
-}
+/* Sem safe area embaixo: o menu (footer) fica colado na borda física da tela.
+   O frame usa viewport-fit=cover + fixed inset-0, então o fundo do menu cobre
+   toda a base, incluindo a zona da home indicator. */
