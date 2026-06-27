@@ -1,7 +1,10 @@
-{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
-{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  · serverActions"}
-{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
-{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
-{"timestamp":"00:00:00.602","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:01:55.639","source":"Server","level":"LOG","message":"✓ Compiled in 39ms"}
-{"timestamp":"00:02:10.255","source":"Server","level":"LOG","message":"✓ Compiled in 255ms"}
+{"timestamp":"00:00:00.598","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
+{"timestamp":"00:00:00.598","source":"Server","level":"LOG","message":"  · serverActions"}
+{"timestamp":"00:00:00.599","source":"Server","level":"LOG","message":"  ✓ transitionIndicator"}
+{"timestamp":"00:00:00.599","source":"Server","level":"LOG","message":"  ⨯ turbopackFileSystemCacheForDev"}
+{"timestamp":"00:00:00.599","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:04.859","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:06:46.390","source":"Server","level":"LOG","message":"✓ Compiled in 194ms"}
+{"timestamp":"00:06:58.056","source":"Server","level":"LOG","message":"✓ Compiled in 160ms"}
+{"timestamp":"00:07:13.652","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
+{"timestamp":"00:07:21.844","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}

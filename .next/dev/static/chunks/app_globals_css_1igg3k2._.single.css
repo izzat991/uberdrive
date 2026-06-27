@@ -1595,8 +1595,9 @@ html, body {
   color: #fff;
   overscroll-behavior: none;
   -webkit-tap-highlight-color: transparent;
-  background: #000;
+  background: #0f0f0f;
   height: 100%;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
 }
@@ -1621,10 +1622,6 @@ html, body {
 
 .pt-safe-lg {
   padding-top: max(1.25rem, env(safe-area-inset-top));
-}
-
-.pb-safe {
-  padding-bottom: max(.5rem, env(safe-area-inset-bottom));
 }
 
 .mt-safe {
