@@ -12,9 +12,25 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #000;
+  /* Mesmo tom da barra de navegação (uberBg). Assim a zona da home indicator
+     do iPhone, em modo PWA standalone, se funde com o menu — sem faixa preta. */
+  background: #0f0f0f;
   color: #fff;
   height: 100%;
+}
+
+/* iOS standalone (Add to Home Screen): travamos o body na viewport VISUAL
+   inteira (edge-to-edge, incluindo a faixa da home indicator). Sem isso, um
+   filho `position: fixed` deixa a região da home indicator exibindo o fundo
+   da página — é exatamente a "faixa preta" embaixo do menu. Com o body fixo
+   e na cor uberBg, o menu encosta na borda física da tela em qualquer iPhone
+   (Face ID / Dynamic Island incluídos). */
+body {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   overscroll-behavior: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -34,23 +50,16 @@ body {
   scrollbar-width: none;
 }
 
-/* ---- Safe area (notch / barra de status / home indicator do iPhone) ----
-   Combinamos o espaçamento de design com o inset do dispositivo via max(),
-   garantindo que o conteúdo nunca fique sob a barra de notificação no topo
-   e sem espaçamento exagerado embaixo em telas sem home indicator. */
+/* ---- Safe area APENAS NO TOPO (notch / barra de status do iPhone) ----
+   Combinamos o espaçamento de design com o inset superior do dispositivo via
+   max(), garantindo que o conteúdo nunca fique sob a barra de notificação.
+   Não há safe area embaixo: o menu fica colado na borda inferior da tela. */
 .pt-safe {
   padding-top: max(0.75rem, env(safe-area-inset-top));
 }
 .pt-safe-lg {
   padding-top: max(1.25rem, env(safe-area-inset-top));
 }
-.pb-safe {
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
-}
 .mt-safe {
   margin-top: env(safe-area-inset-top);
 }
-
-/* Sem safe area embaixo: o menu (footer) fica colado na borda física da tela.
-   O frame usa viewport-fit=cover + fixed inset-0, então o fundo do menu cobre
-   toda a base, incluindo a zona da home indicator. */
