@@ -19,17 +19,18 @@ body {
   height: 100%;
 }
 
-/* iOS standalone (Add to Home Screen): travamos o body na viewport VISUAL
-   inteira (edge-to-edge, incluindo a faixa da home indicator). Sem isso, um
-   filho `position: fixed` deixa a região da home indicator exibindo o fundo
-   da página — é exatamente a "faixa preta" embaixo do menu. Com o body fixo
-   e na cor uberBg, o menu encosta na borda física da tela em qualquer iPhone
-   (Face ID / Dynamic Island incluídos). */
+/* iOS standalone (Add to Home Screen): o body ocupa a viewport DINÂMICA
+   inteira (100dvh). Importante: NÃO usamos `inset: 0`/`bottom: 0`, porque um
+   `position: fixed` dimensionado por `bottom` usa a *layout viewport*, que no
+   iOS standalone NÃO inclui a faixa da home indicator — é isso que criava o
+   espaçamento embaixo do menu. Com `height: 100dvh` o body cobre a tela física
+   inteira, então o menu encosta de fato na borda inferior. */
 body {
   position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
   overflow: hidden;
   overscroll-behavior: none;
   -webkit-tap-highlight-color: transparent;
