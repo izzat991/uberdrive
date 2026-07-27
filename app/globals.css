@@ -55,40 +55,25 @@ body {
   padding-bottom: 0 !important;
 }
 
-/* O fundo continua edge-to-edge, mas controles presos à base sobem para o
-   limite visível. Isso não cria padding nem altera o fluxo da página. */
-.bottom-nav {
-  position: relative;
-  bottom: env(safe-area-inset-bottom, 0px);
-  z-index: 50;
-}
-
-.pwa-bottom-panel {
-  bottom: env(safe-area-inset-bottom, 0px) !important;
-}
-
 .phone-frame {
   height: 100dvh;
   max-height: 100dvh;
 }
 
-/* O iOS standalone pode encerrar 100dvh antes da faixa do home indicator.
-   Em telas móveis, expandimos o app para BAIXO pelo inset reservado. O valor
-   é usado somente para cancelar a reserva do sistema, nunca como padding. */
 @media (max-width: 639px) {
   body {
-    bottom: calc(0px - env(safe-area-inset-bottom, 0px));
-    height: auto;
-    min-height: calc(100dvh + env(safe-area-inset-bottom, 0px));
-    max-height: none;
+    bottom: 0;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
   }
 
   .phone-frame {
     top: 0;
     bottom: 0 !important;
-    height: auto;
-    min-height: 100%;
-    max-height: none;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
   }
 }
 

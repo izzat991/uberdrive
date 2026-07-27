@@ -32,7 +32,7 @@ export default function RideRequest({
 
   return (
     <motion.div
-      className="pwa-bottom-panel absolute inset-x-0 bottom-0 z-40 rounded-t-2xl border-t border-white/[0.08] bg-[#1a1a1a] px-5 pb-5 pt-4"
+      className="absolute inset-x-0 bottom-0 z-40 rounded-t-2xl border-t border-white/[0.08] bg-[#1a1a1a] px-5 pb-5 pt-4"
       initial={{ y: 60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ opacity: 0 }}
