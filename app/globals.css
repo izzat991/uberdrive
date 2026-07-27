@@ -31,6 +31,17 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* WebKit standalone calcula unidades dinâmicas e bottom:0 incorretamente
+   quando viewport-fit=cover está ativo. 100vh representa a tela física no
+   PWA instalado; esta regra não afeta a navegação normal no Safari. */
+@media (display-mode: standalone) {
+  html,
+  body {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}
+
 /* Edge-to-edge inferior explícito. Nenhum inset do sistema é aplicado na
    parte de baixo; safe-area é permitido somente pelas classes de topo. */
 .phone-frame,
