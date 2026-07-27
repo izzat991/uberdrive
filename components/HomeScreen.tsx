@@ -80,7 +80,7 @@ export default function HomeScreen({
       </div>
 
       {/* Barra inferior: botão "Ficar online" */}
-      <div className="px-4 pb-5 pt-1">
+      <div className="px-4 pb-0 pt-1">
         <button
           type="button"
           onClick={onGoOnline}
