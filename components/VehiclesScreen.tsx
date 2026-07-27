@@ -13,7 +13,7 @@ export default function VehiclesScreen({
   onBack?: () => void;
   onNavigate?: (key: NavKey) => void;
 }) {
-  const usage = profile.vehicleType === "moto" ? "Apenas entrega" : "Viagens e entregas";
+  const usage = "Viagens e entregas";
 
   return (
     <div className="absolute inset-0 z-[45] flex flex-col bg-[#121212]">
