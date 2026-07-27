@@ -13,9 +13,12 @@ export default function ServiceWorkerRegister() {
     if (process.env.NODE_ENV !== "production") return;
 
     const onLoad = () => {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
-        /* silencioso: WebViews podem bloquear SW */
-      });
+      navigator.serviceWorker
+        .register("/sw.js", { updateViaCache: "none" })
+        .then((registration) => registration.update())
+        .catch(() => {
+          /* silencioso: WebViews podem bloquear SW */
+        });
     };
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);

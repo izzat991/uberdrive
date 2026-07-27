@@ -1,5 +1,5 @@
 // Service worker mínimo: cache offline básico do app shell.
-const CACHE = "driver-app-v1";
+const CACHE = "driver-app-v2";
 const ASSETS = ["/", "/manifest.json"];
 
 self.addEventListener("install", (event) => {
@@ -19,6 +19,22 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
+
+  // O app shell precisa vir da rede primeiro. Usar cache-first aqui mantém
+  // HTML e bundles antigos ativos no PWA mesmo depois de um novo deploy.
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put("/", copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match("/"))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => {
       const network = fetch(request)
