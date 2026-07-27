@@ -63,7 +63,7 @@ export default function BottomSheet({
 
   return (
     <motion.div
-      className={`absolute inset-x-0 bottom-0 z-30 rounded-t-3xl border-t shadow-[0_-10px_40px_rgba(0,0,0,0.6)] ${
+      className={`pwa-bottom-panel absolute inset-x-0 bottom-0 z-30 rounded-t-3xl border-t shadow-[0_-10px_40px_rgba(0,0,0,0.6)] ${
         isOnline ? "border-white/[0.08] bg-[#111111]" : "border-sheetEdge bg-sheet"
       }`}
       style={{ height: SHEET_HEIGHT, touchAction: "none" }}
