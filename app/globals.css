@@ -56,9 +56,28 @@ body {
 }
 
 .phone-frame {
-  bottom: 0 !important;
   height: 100dvh;
   max-height: 100dvh;
+}
+
+/* O iOS standalone pode encerrar 100dvh antes da faixa do home indicator.
+   Em telas móveis, expandimos o app para BAIXO pelo inset reservado. O valor
+   é usado somente para cancelar a reserva do sistema, nunca como padding. */
+@media (max-width: 639px) {
+  body {
+    bottom: calc(0px - env(safe-area-inset-bottom, 0px));
+    height: auto;
+    min-height: calc(100dvh + env(safe-area-inset-bottom, 0px));
+    max-height: none;
+  }
+
+  .phone-frame {
+    top: 0;
+    bottom: 0 !important;
+    height: auto;
+    min-height: 100%;
+    max-height: none;
+  }
 }
 
 /* Prevent text selection while dragging the sheet around (feels native) */
