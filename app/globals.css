@@ -55,6 +55,18 @@ body {
   padding-bottom: 0 !important;
 }
 
+/* O fundo continua edge-to-edge, mas controles presos à base sobem para o
+   limite visível. Isso não cria padding nem altera o fluxo da página. */
+.bottom-nav {
+  position: relative;
+  bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 50;
+}
+
+.pwa-bottom-panel {
+  bottom: env(safe-area-inset-bottom, 0px) !important;
+}
+
 .phone-frame {
   height: 100dvh;
   max-height: 100dvh;
