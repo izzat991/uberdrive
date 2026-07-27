@@ -1,5 +1,5 @@
 // Service worker mínimo: cache offline básico do app shell.
-const CACHE = "driver-app-v7";
+const CACHE = "driver-app-v8";
 const ASSETS = ["/", "/manifest.json"];
 
 self.addEventListener("install", (event) => {
