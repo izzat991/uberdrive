@@ -63,6 +63,17 @@ body {
   }
 }
 
+/* Alguns WebKit standalone de iPhone 11/12/13 Pro Max reportam o inset como
+   zero. O fallback é restrito às larguras desses aparelhos e permanece dentro
+   do fundo do menu, sem criar espaço externo ou deslocar outras telas. */
+@supports (-webkit-touch-callout: none) {
+  @media (min-width: 414px) and (max-width: 428px) {
+    .bottom-nav {
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
+    }
+  }
+}
+
 /* Prevent text selection while dragging the sheet around (feels native) */
 .no-select {
   -webkit-user-select: none;
@@ -81,7 +92,7 @@ body {
 /* ---- Safe area superior para headers (notch / status bar) ----
    Combinamos o espaçamento de design com o inset superior do dispositivo via
    max(), garantindo que o conteúdo nunca fique sob a barra de notificação.
-   Não há safe area embaixo: o menu fica colado na borda inferior da tela. */
+   A safe area inferior é tratada exclusivamente pelo BottomNav. */
 .pt-safe {
   padding-top: max(0.75rem, env(safe-area-inset-top));
 }
