@@ -33,12 +33,19 @@ body {
 
 /* WebKit standalone calcula unidades dinâmicas e bottom:0 incorretamente
    quando viewport-fit=cover está ativo. 100vh representa a tela física no
-   PWA instalado; esta regra não afeta a navegação normal no Safari. */
+   PWA instalado; esta regra não afeta a navegação normal no Safari.
+   100vh sozinho é inconsistente entre tipos de lançamento (cold start vs.
+   retomada após fechar de vez): em alguns o WebKit calcula uma altura menor
+   que a física, encolhendo o app e sobrando área preta abaixo do menu.
+   100dvh acompanha a viewport real em cada lançamento; 100vh fica como
+   fallback só para engines sem suporte a dvh. */
 @media (display-mode: standalone) {
   html,
   body {
     height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
+    min-height: 100dvh;
   }
 }
 
