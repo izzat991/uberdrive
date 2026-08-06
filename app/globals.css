@@ -57,17 +57,18 @@ body {
   background-color: #0f0f0f;
 }
 
+/* Alguns WebKit standalone reportam o safe-area-inset-bottom como zero
+   (varia por modelo/versão do iOS, incluindo Pro Max mais recentes). O
+   mínimo de 28px garante o respiro do home indicator mesmo quando o inset
+   não é reportado, sem depender da largura física do aparelho. */
 @media (display-mode: standalone) {
   .bottom-nav {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
   }
 }
 
-/* Alguns WebKit standalone de iPhone 11/12/13 Pro Max reportam o inset como
-   zero. O fallback é restrito às larguras desses aparelhos e permanece dentro
-   do fundo do menu, sem criar espaço externo ou deslocar outras telas. */
 @supports (-webkit-touch-callout: none) {
-  @media (min-width: 414px) and (max-width: 428px) {
+  @media (display-mode: standalone) {
     .bottom-nav {
       padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
     }
