@@ -53,24 +53,21 @@ body {
    os controles sobem e o fundo permanece desenhado até a borda física. */
 .bottom-nav {
   margin-bottom: 0 !important;
-  padding-bottom: 0;
   background-color: #0f0f0f;
+  /* Sem gate de display-mode: o inset vale na aba do Safari, no PWA instalado
+     e dentro de WebView. Onde não existe recorte, env() resolve para 0, então
+     desktop e Android sem barra de gestos continuam sem espaço extra. */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Alguns WebKit standalone reportam o safe-area-inset-bottom como zero
-   (varia por modelo/versão do iOS, incluindo Pro Max mais recentes). O
-   mínimo de 28px garante o respiro do home indicator mesmo quando o inset
-   não é reportado, sem depender da largura física do aparelho. */
-@media (display-mode: standalone) {
-  .bottom-nav {
-    padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
-  }
-}
-
+/* iPhone em tela cheia nem sempre reporta o inset — parte dos WebKit retorna
+   zero, e aí o menu fica sob a home indicator. O piso de 34px cobre a maior
+   barra atual (linha Pro Max) e vale só para largura de celular em WebKit,
+   então a moldura do desktop não muda. */
 @supports (-webkit-touch-callout: none) {
-  @media (display-mode: standalone) {
+  @media (max-width: 639px) {
     .bottom-nav {
-      padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 34px);
     }
   }
 }
