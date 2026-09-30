@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { VehicleType } from "./profile";
+import type { RideRoute } from "../lib/rideRoutes";
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
@@ -20,10 +21,12 @@ function randomFare(type: VehicleType) {
 
 export default function RideRequest({
   vehicleType,
+  route,
   onAccept,
   onExpire,
 }: {
   vehicleType: VehicleType;
+  route: RideRoute;
   onAccept: () => void;
   onExpire: () => void;
 }) {
@@ -95,18 +98,18 @@ export default function RideRequest({
             <span className="h-1 w-1 rounded-full bg-white" />
           </span>
           <div className="-mt-0.5">
-            <p className="text-[14px] text-white">9 minutos (4.8 km) de distância</p>
+            <p className="text-[14px] text-white">{route.pickupMinutes} minutos ({route.pickupKm} km) de distância</p>
             <p className="text-[13px] text-[#AFAFAF]">
-              Rua Rodrigues de Freitas, Santíssimo e arredores
+              {route.pickup}
             </p>
           </div>
         </div>
         <div className="flex gap-3">
           <span className="mt-1 h-3.5 w-3.5 shrink-0 rounded-[3px] bg-white" />
           <div className="-mt-0.5">
-            <p className="text-[14px] text-white">Viagem de 20 minutos (12.4 km)</p>
+            <p className="text-[14px] text-white">Viagem de {route.tripMinutes} minutos ({route.tripKm} km)</p>
             <p className="text-[13px] text-[#AFAFAF]">
-              Rua Boa Fé, 5 - Inhoaíba - Rio de Janeiro - RJ, 23063-520
+              {route.destination}
             </p>
           </div>
         </div>

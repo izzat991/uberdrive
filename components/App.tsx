@@ -14,6 +14,7 @@ import HomeScreen from "./HomeScreen";
 import FacialVerification from "./FacialVerification";
 import SelfieCapture from "./SelfieCapture";
 import RideRequest from "./RideRequest";
+import { createRoutePicker, type RideRoute } from "../lib/rideRoutes";
 import DiscoverScreen from "./DiscoverScreen";
 import EarningsScreen from "./EarningsScreen";
 import MenuScreen from "./MenuScreen";
@@ -42,14 +43,19 @@ export default function App() {
   const [navLoading, setNavLoading] = useState(false);
   const [verify, setVerify] = useState<Verify>("none");
   const [ride, setRide] = useState<"none" | "incoming">("none");
+  const [nextRoute] = useState(() => createRoutePicker());
+  const [rideRoute, setRideRoute] = useState<RideRoute | null>(null);
   const [profile, setProfile] = useState<Profile>(DEFAULT_PROFILE);
 
   // Busca de corrida: online + sem corrida -> após 8s chega uma solicitação.
   useEffect(() => {
     if (status !== "online" || screen !== "map" || ride !== "none") return;
-    const t = setTimeout(() => setRide("incoming"), 8000);
+    const t = setTimeout(() => {
+      setRideRoute(nextRoute());
+      setRide("incoming");
+    }, 8000);
     return () => clearTimeout(t);
-  }, [status, screen, ride]);
+  }, [status, screen, ride, nextRoute]);
 
   // Carrega o perfil salvo (localStorage) após montar (client-only).
   useEffect(() => {
@@ -165,9 +171,10 @@ export default function App() {
 
       {/* Solicitação de corrida */}
       <AnimatePresence>
-        {ride === "incoming" && (
+        {ride === "incoming" && rideRoute && (
           <RideRequest
             key="ride"
+            route={rideRoute}
             vehicleType={profile.vehicleType}
             onAccept={() => setRide("none")}
             onExpire={() => setRide("none")}
